@@ -24,9 +24,6 @@ pipeline {
             }
           }
           stages {
-            stage('Nodejs Setup') {
-              steps {
-                checkout scm
                 stage('Nodejs Setup') {
               steps {
                 checkout scm
