@@ -1,5 +1,5 @@
 pipeline {
- agent none
+  agent none
   options { 
     buildDiscarder(logRotator(numToKeepStr: '2'))
     skipDefaultCheckout true
@@ -9,11 +9,10 @@ pipeline {
       echo "Why didn't you push my button?"
     }
   }
-  stages {
-    stage('Test') {
-    agent { label 'nodejs-app' }
+   stage('Test') {
+      agent { label 'nodejs-app' }
       steps {
-       checkout scm
+        checkout scm
         container('nodejs') {
           echo 'Hello World!'   
           sh 'node --version'
