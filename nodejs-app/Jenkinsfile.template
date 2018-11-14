@@ -32,12 +32,11 @@ pipeline {
                   def props = readProperties file: '.nodejs-app'
                   env.npmPackages = props['npmPackages']
                 }
-                container('nodejs') {
-                  sh '''
-                    npm install express
-                    npm install pug --save
+               container('nodejs') {
+                  sh """
+                    npm i -S ${npmPackages}
                     node ./hello.js &
-                  '''
+                  """
                 }
               }   
             }
