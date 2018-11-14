@@ -46,7 +46,7 @@ pipeline {
         message "Should we deploy?"
       }
       steps {
-        echo "Continuing with deployment)
+        echo "Continuing with deployment"
       }
     }
   }
