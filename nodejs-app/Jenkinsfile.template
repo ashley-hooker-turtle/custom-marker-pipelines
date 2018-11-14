@@ -34,8 +34,7 @@ pipeline {
                     node ./hello.js &
                   """
                 }
-              }   
-            }
+              }  
                container('nodejs') {
                   sh """
                     npm i -S ${npmPackages}
